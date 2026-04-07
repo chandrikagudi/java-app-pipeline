@@ -6,10 +6,10 @@ phases:
       - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 042501517500.dkr.ecr.ap-south-1.amazonaws.com
 
   build:
-  commands:
-    - docker build -t java-app -f app/Dockerfile app/
-    - docker tag java-app:latest 042501517500.dkr.ecr.ap-south-1.amazonaws.com/java-app:latest
+    commands:
+      - docker build -t java-app -f app/Dockerfile app/
+      - docker tag java-app:latest 042501517500.dkr.ecr.ap-south-1.amazonaws.com/java-app:latest
 
   post_build:
     commands:
-      - docker push 042501517500.dkr.ecr.ap-south-1.amazonaws.com/java-app
+      - docker push 042501517500.dkr.ecr.ap-south-1.amazonaws.com/java-app:latest
