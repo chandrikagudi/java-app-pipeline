@@ -1,5 +1,5 @@
 FROM eclipse-temurin:11-jdk
-COPY . /app
 WORKDIR /app
+COPY App.java .
 RUN javac App.java
 CMD ["java", "App"]
