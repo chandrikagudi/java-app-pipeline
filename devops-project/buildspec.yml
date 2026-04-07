@@ -8,6 +8,7 @@ phases:
   build:
   commands:
     - docker build -t java-app -f app/Dockerfile app/
+    - docker tag java-app:latest 042501517500.dkr.ecr.ap-south-1.amazonaws.com/java-app:latest
 
   post_build:
     commands:
